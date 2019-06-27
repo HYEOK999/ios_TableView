@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
     
+    var restaurantIsVisited = Array(repeating: false, count: 21)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,10 +51,12 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableVw.cellForRow(at: indexPath) as! DetailTableViewCell
-        
+        cell.resLocation.text = restaurantLocations[indexPath.row]
+        cell.resType.text = restaurantTypes[indexPath.row]
+        cell.resName.text = restaurantNames[indexPath.row]
+        cell.resImg.image = UIImage(named: restaurantImages[indexPath.row])
+        cell.heartImg.isHidden = restaurantIsVisited[indexPath.row] ? false : true
         
         return cell
     }
-    
-    
 }
