@@ -50,7 +50,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableVw.cellForRow(at: indexPath) as! DetailTableViewCell
+        let cell = tableVw.dequeueReusableCell(withIdentifier: "cell01", for: indexPath) as! DetailTableViewCell
         cell.resLocation.text = restaurantLocations[indexPath.row]
         cell.resType.text = restaurantTypes[indexPath.row]
         cell.resName.text = restaurantNames[indexPath.row]
@@ -58,5 +58,39 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
         cell.heartImg.isHidden = restaurantIsVisited[indexPath.row] ? false : true
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAct = UIContextualAction(style: .destructive, title: "삭제") { (action, sourceview, handler) in
+            handler(true)
+        }
+        let shareAct = UIContextualAction(style: .normal, title: "공유") { (action, sourceview, handler) in
+            handler(true)
+        }
+        
+        deleteAct.backgroundColor = .red
+        shareAct.backgroundColor = .blue
+        deleteAct.image = UIImage(named: "baseline_delete_forever_black_36pt")
+        shareAct.image = UIImage(named: "baseline_share_black_36pt")
+        
+        let swipeVC = UISwipeActionsConfiguration(actions: [deleteAct,shareAct])
+        return swipeVC
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let checkAct = UIContextualAction(style: .normal, title: "확인") { (action, sourceview, handler) in
+            let cell = tableView.cellForRow(at: indexPath) as! DetailTableViewCell
+            self.restaurantIsVisited[indexPath.row] = (self.restaurantIsVisited[indexPath.row]) ? false:true
+            cell.heartImg.isHidden = self.restaurantIsVisited[indexPath.row] ? false:true
+            
+            handler(true)
+        }
+        
+        let checkIcon = self.restaurantIsVisited[indexPath.row] ? "undo" : "tick"
+        checkAct.backgroundColor = .green
+        checkAct.image = UIImage(named: checkIcon)
+        
+        let swipeVC = UISwipeActionsConfiguration(actions: [checkAct])
+        return swipeVC
     }
 }
