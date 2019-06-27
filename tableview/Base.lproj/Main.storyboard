@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ss" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell01" rowHeight="100" id="S2Z-mP-TDO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ss" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell01" rowHeight="100" id="S2Z-mP-TDO" customClass="DetailTableViewCell" customModule="tableview" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S2Z-mP-TDO" id="n1K-ug-YnR">
@@ -61,6 +61,11 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="heartImg" destination="P76-Yj-38P" id="Mkt-9y-N9m"/>
+                                            <outlet property="resImg" destination="iFD-v5-WRl" id="ISO-S9-SSu"/>
+                                            <outlet property="resLocation" destination="emM-Zh-0lA" id="JPP-Gk-7hJ"/>
+                                            <outlet property="resName" destination="uAy-U1-4Bg" id="clC-Xb-jWi"/>
+                                            <outlet property="resType" destination="jOo-Qn-6t0" id="uMh-Vn-QUz"/>
                                             <segue destination="Ngn-Ka-Nyi" kind="show" identifier="toDetail" id="4DU-ZC-f4B"/>
                                         </connections>
                                     </tableViewCell>
@@ -82,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="2222" y="138"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="b0b-Uq-QMh">
             <objects>
-                <viewController id="Ngn-Ka-Nyi" sceneMemberID="viewController">
+                <viewController id="Ngn-Ka-Nyi" customClass="DetailViewController" customModule="tableview" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6O7-dV-ZW2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +124,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="FxA-eX-gkU"/>
                     </view>
+                    <connections>
+                        <outlet property="resImg" destination="YLH-pM-cZI" id="VZx-3t-U9w"/>
+                        <outlet property="resLocation" destination="fia-ba-EUr" id="DS6-5N-YOh"/>
+                        <outlet property="resName" destination="0SN-iN-s3y" id="vml-Uh-b8A"/>
+                        <outlet property="resType" destination="57F-aV-F6Q" id="8kC-52-KfZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MDM-2y-mZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
