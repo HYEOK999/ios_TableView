@@ -54,7 +54,7 @@
                                                     <rect key="frame" x="20" y="19" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P76-Yj-38P">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="heart-tick" translatesAutoresizingMaskIntoConstraints="NO" id="P76-Yj-38P">
                                                     <rect key="frame" x="374" y="10" width="20" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -82,6 +82,9 @@
                         <viewLayoutGuide key="safeArea" id="zcI-bY-uLs"/>
                     </view>
                     <navigationItem key="navigationItem" id="X6p-Vs-N7E"/>
+                    <connections>
+                        <outlet property="tableVw" destination="7ti-JD-oi9" id="QtK-DK-SF3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4P-Mv-1wi" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,4 +157,7 @@
             <point key="canvasLocation" x="1371" y="138"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="heart-tick" width="22" height="21"/>
+    </resources>
 </document>
