@@ -14,6 +14,8 @@
 		480D9ABD22C5276C00F6E763 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 480D9ABB22C5276C00F6E763 /* LaunchScreen.storyboard */; };
 		480D9AC822C5276D00F6E763 /* tableviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D9AC722C5276D00F6E763 /* tableviewTests.swift */; };
 		480D9AD322C5276D00F6E763 /* tableviewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D9AD222C5276D00F6E763 /* tableviewUITests.swift */; };
+		480D9AE122C528A900F6E763 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D9AE022C528A900F6E763 /* DetailViewController.swift */; };
+		480D9AE322C528B800F6E763 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480D9AE222C528B800F6E763 /* DetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		480D9ACE22C5276D00F6E763 /* tableviewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tableviewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		480D9AD222C5276D00F6E763 /* tableviewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableviewUITests.swift; sourceTree = "<group>"; };
 		480D9AD422C5276D00F6E763 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		480D9AE022C528A900F6E763 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		480D9AE222C528B800F6E763 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				480D9AB922C5276C00F6E763 /* Assets.xcassets */,
 				480D9ABB22C5276C00F6E763 /* LaunchScreen.storyboard */,
 				480D9ABE22C5276C00F6E763 /* Info.plist */,
+				480D9AE022C528A900F6E763 /* DetailViewController.swift */,
+				480D9AE222C528B800F6E763 /* DetailTableViewCell.swift */,
 			);
 			path = tableview;
 			sourceTree = "<group>";
@@ -256,7 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480D9AE122C528A900F6E763 /* DetailViewController.swift in Sources */,
 				480D9AB522C5276C00F6E763 /* ViewController.swift in Sources */,
+				480D9AE322C528B800F6E763 /* DetailTableViewCell.swift in Sources */,
 				480D9AB322C5276C00F6E763 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
