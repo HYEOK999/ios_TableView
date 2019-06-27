@@ -34,8 +34,18 @@ class ViewController: UIViewController {
         tableVw.dataSource = self
         // Do any additional setup after loading the view.
     }
-
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail"{
+            if let indexPath = tableVw.indexPathForSelectedRow{
+                let destinationVC = segue.destination as! DetailViewController
+                destinationVC.getName = restaurantNames[indexPath.row]
+                destinationVC.getType = restaurantTypes[indexPath.row]
+                destinationVC.getLocation = restaurantLocations[indexPath.row]
+                destinationVC.getImage = restaurantImages[indexPath.row]
+            }
+        }
+    }
 }
 
 
